@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 const SideBarLeft = () => {
     const removeNav = e => {
         document.querySelector(".sideBarLeft").classList.remove("active");
+        let projects = document.querySelector(".projects");
+        if (projects) {
+            projects.classList.remove("active");
+        }
     }
     return (
         <nav className="sideBarLeft">

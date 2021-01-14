@@ -87,7 +87,13 @@ body{
   background-color: #fff;
   border-bottom: 1px solid #bbb4b4;
   color: #000;
+  transform: translateY(-6rem);
+  animation: animateNav 1s linear forwards;
   z-index: 20;
+}
+@keyframes animateNav{
+  0%{transform: translateY(-6rem);}
+  100%{transform: translateY(0rem);}
 }
 .nav__logo{
   letter-spacing: 1rem;
@@ -159,6 +165,7 @@ body{
   grid-auto-rows: 30rem;
   position: relative;
   transition: all 0.5s linear;
+  overflow: hidden;
   z-index: -1;
 }
 .projects.active{
@@ -179,6 +186,20 @@ body{
 }
 .projects__container{
   position: relative;
+}
+.projects__container:nth-child(3n-2),
+.projects__container:nth-child(3n-1),
+.projects__container:nth-child(3n)
+{
+  transform: translateY(100vh);
+  animation: moveUp 1.5s linear forwards;
+}
+.projects__container:nth-child(3n-2){animation-delay: 0s;}
+.projects__container:nth-child(3n-1){animation-delay: 0.4s;}
+.projects__container:nth-child(3n){animation-delay: 0.8s;}
+@keyframes moveUp{
+  0%{transform: translateY(100vh);}
+  100%{transform: translateY(0);}
 }
 .projects__img{
   position: absolute;
