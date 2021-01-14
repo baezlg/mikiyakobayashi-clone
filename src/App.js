@@ -7,11 +7,12 @@ import SideBarLeft from "./components/SideBarLeft";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
+import News from "./components/News";
+import Footer from "./components/Footer";
 
-function App() {
+function App() { 
   const [menu, setMenu] = useState({
     menuState: {
       project: "PROJECTS",
@@ -32,11 +33,14 @@ function App() {
             <Navbar title={menu.menuState.project} />
             <Projects />
             <SideBarLeft/>
+             <Footer/>
           </Route>
           <Route exact path="/news">
             <Navbar title={menu.menuState.news} />
             <div>NEWS</div>
-            <SideBarLeft/>
+            <News/>
+            <SideBarLeft />
+            <Footer/>
           </Route>
           <Route exact path="/profile">
             <Navbar title={menu.menuState.profile} />
